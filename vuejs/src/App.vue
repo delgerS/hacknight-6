@@ -13,12 +13,25 @@ export default {
 <style lang="scss">
 $background-color: #18181e;
 
+%text {
+  color: white;
+  font-size: 60px;
+}
+
+.col {
+  display: inline-flex;
+  align-items: center;
+  flex-direction: column;
+  > span {
+    @extend %text;
+  }
+}
+
 body {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: $background-color;
-  color: white;
   padding: 60px;
 }
 
@@ -26,10 +39,9 @@ input {
   width: 100%;
   border: none;
   outline: none;
-  color: white;
-  font-size: 60px;
   background: none;
   font-family: inherit;
+  @extend %text;
 }
 
 img {
