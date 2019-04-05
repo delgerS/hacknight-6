@@ -17,4 +17,4 @@ Flexbox froggy: https://flexboxfroggy.com
 
 Grid garden: https://cssgridgarden.com
 
-Learn ES6: https://es6.io
+Learn ES6: http://es6-features.org
