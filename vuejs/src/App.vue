@@ -1,13 +1,32 @@
 <template>
   <div id="app">
-    <input placeholder="Ask me something..." />
+    <input placeholder="Ask me something..." @keypress="onKeyPress" />
+    <div class="col" v-if="data">
+      <span>{{ data.answer }}</span>
+      <img v-bind:src="data.image" />
+    </div>
   </div>
 </template>
 
 <script>
-export default {
-  name: "app"
-};
+import Vue from "vue";
+
+export default Vue.extend({
+  name: "app",
+  data: () => ({
+    data: null
+  }),
+  methods: {
+    loadAnswer() {
+      fetch("https://yesno.wtf/api")
+        .then(res => res.json())
+        .then(res => (this.data = res));
+    },
+    onKeyPress(event) {
+      if (event.key === "Enter") this.loadAnswer();
+    }
+  }
+});
 </script>
 
 <style lang="scss">
