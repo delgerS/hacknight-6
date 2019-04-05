@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "hacknight-6-react",
+  "name": "hacknight-6-vanilla",
   "version": "1.0.0",
   "description": "Build a simple web app using React",
   "main": "src/index.js",
